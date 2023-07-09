@@ -18,8 +18,8 @@ class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
   ) : super(const AuthSt()) {
     on<AppStartedEv>((event, emit) async {
       debugPrint('APP STARTED');
-      final bool isOnHomeRoute = await navigationUtil.isOnHomeRoute();
-      final bool isOnAuthRoute = await navigationUtil.isOnAuthRoute();
+      final bool isOnHomeRoute = await navigationUtil.isOnHomeRoute(); //true
+      final bool isOnAuthRoute = await navigationUtil.isOnAuthRoute(); //false
 
       if (isOnAuthRoute || state == const AuthSt()) {
         emit(
