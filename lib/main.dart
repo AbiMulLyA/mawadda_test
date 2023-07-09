@@ -7,16 +7,16 @@ import 'core/di/injector.dart';
 import 'core/navigation/bloc/navigation_bloc.dart';
 import 'core/router/router.dart';
 
-Future<void> main() async {
-  await mainApp();
+void main() {
+  mainApp();
 }
 
-Future<void> mainApp() async {
+void mainApp() {
   final WidgetsBinding widgetsBinding =
       WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  await configureInjector();
+  configureInjector();
 
   runApp(const App());
 }
