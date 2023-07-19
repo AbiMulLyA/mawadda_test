@@ -1,12 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mawadda_app/auth/pages/login_page.dart';
-import 'package:mawadda_app/auth/pages/register_page.dart';
-import 'package:mawadda_app/core/navigation/bloc/navigation_bloc.dart';
-import 'package:mawadda_app/core/router/router.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../core/di/injector.dart';
+import '../../core/navigation/bloc/navigation_bloc.dart';
+import 'login_page.dart';
+import 'register_page.dart';
 
 @RoutePage()
 class AuthPage extends StatelessWidget {
@@ -17,39 +18,68 @@ class AuthPage extends StatelessWidget {
     return BlocProvider(
       create: (_) => getIt<NavigationBloc>(),
       child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(16),
+        color: const Color(0XFFFFD4AB),
+        padding: EdgeInsets.only(
+          top: 20.r,
+          left: 16.r,
+          right: 16.r,
+        ),
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
-                  // context.router.push(const LoginRoute());
-                  // context.router.replace(const LoginRoute());
-                  // context.read<NavigationBloc>().add(const HomeEv());
-                },
-                child: const Text('Login'),
+              SvgPicture.asset(
+                'assets/welcome_card.svg',
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const RegisterPage(),
+              SizedBox(
+                height: 36.h,
+                width: 169.w,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff70303A)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
-                  );
-                },
-                child: const Text('Sign Up'),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20.h,
+              ),
+              SizedBox(
+                height: 36.h,
+                width: 169.w,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xff70303A)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Sign up',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

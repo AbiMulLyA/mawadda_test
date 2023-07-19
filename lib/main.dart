@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'core/di/injector.dart';
 import 'core/navigation/bloc/navigation_bloc.dart';
@@ -38,12 +40,18 @@ class _AppState extends State<App> {
           create: (_) => getIt<NavigationBloc>()..add(const AppStartedEv()),
         ),
       ],
-      child: MaterialApp.router(
-        theme: ThemeData(
-          useMaterial3: true,
+      child: ScreenUtilInit(
+        designSize: const Size(360, 720),
+        splitScreenMode: true,
+        ensureScreenSize: true,
+        child: MaterialApp.router(
+          theme: ThemeData(
+            useMaterial3: true,
+            textTheme: GoogleFonts.averiaGruesaLibreTextTheme(),
+          ),
+          routerDelegate: _appRouter.delegate(),
+          routeInformationParser: _appRouter.defaultRouteParser(),
         ),
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
       ),
     );
   }
