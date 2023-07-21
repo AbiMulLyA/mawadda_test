@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
     final passwordCtr = TextEditingController();
     return Scaffold(
       body: Container(
-        height: 1.sh,
+        // height: 1.sh,
         color: const Color(0XFFFFD4AB),
         padding: EdgeInsets.all(10.r),
         child: Center(
@@ -26,13 +26,14 @@ class LoginPage extends StatelessWidget {
                 height: 0.3.sh,
               ),
               DefaultTextStyle(
-                style: const TextStyle(color: Colors.white),
+                style: GoogleFonts.averiaGruesaLibre(color: Colors.white),
                 child: Container(
                   padding: EdgeInsets.only(
                     left: 10.r,
                     right: 10.r,
                   ),
                   height: 0.65.sh,
+                  // width: 1.sw,
                   child: Stack(
                     alignment: AlignmentDirectional.topCenter,
                     children: [
@@ -73,7 +74,7 @@ class LoginPage extends StatelessWidget {
                             formKey: 'password',
                             controller: passwordCtr,
                             hintText: 'Your Password',
-                            textInputType: TextInputType.emailAddress,
+                            textInputType: TextInputType.text,
                           ),
                           SizedBox(
                             height: 50.h,
