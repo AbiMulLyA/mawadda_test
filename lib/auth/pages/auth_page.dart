@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/di/injector.dart';
 import '../../core/navigation/bloc/navigation_bloc.dart';
@@ -49,9 +50,9 @@ class AuthPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text(
+                  child: Text(
                     'Login',
-                    style: TextStyle(
+                    style: GoogleFonts.averiaGruesaLibre(
                       color: Colors.white,
                     ),
                   ),
@@ -74,12 +75,22 @@ class AuthPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text(
+                  child: Text(
                     'Sign up',
-                    style: TextStyle(
+                    style: GoogleFonts.averiaGruesaLibre(
                       color: Colors.white,
                     ),
                   ),
+                ),
+              ),
+              SizedBox(
+                height: 15.h,
+              ),
+              Text(
+                '*Sign up if you have not created any account',
+                style: GoogleFonts.averiaGruesaLibre(
+                  color: const Color(0xff70303A),
+                  fontSize: 9.sp,
                 ),
               ),
             ],
