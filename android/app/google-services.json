@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "375809019391",
+    "project_id": "mawadda-c233d",
+    "storage_bucket": "mawadda-c233d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375809019391:android:ec4250fb44de2e8d69abca",
+        "android_client_info": {
+          "package_name": "com.example.mawadda_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375809019391-9jnpktgcp3n7m64uf4nhm0n3vvg5jp11.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7PG_tLAaO-iBLpOvIqR_f3DiwnwwZelc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375809019391-9jnpktgcp3n7m64uf4nhm0n3vvg5jp11.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "375809019391-7q6mgvfmanqmp3kcdjoc6bf3fein4vbv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mawaddaApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375809019391:android:8eb8b3976cffa87c69abca",
+        "android_client_info": {
+          "package_name": "com.work.mawadda_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375809019391-9jnpktgcp3n7m64uf4nhm0n3vvg5jp11.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7PG_tLAaO-iBLpOvIqR_f3DiwnwwZelc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375809019391-9jnpktgcp3n7m64uf4nhm0n3vvg5jp11.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "375809019391-7q6mgvfmanqmp3kcdjoc6bf3fein4vbv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mawaddaApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
