@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 //import 'package:get/get.dart';
 
-class AuthFormComponent extends StatelessWidget {
+class ProfileFormComponent extends StatelessWidget {
   final TextEditingController controller;
   final String? formKey;
   final String hintText;
   final TextInputType textInputType;
   final Function(String? value) validator;
 
-  const AuthFormComponent(
+  const ProfileFormComponent(
       {Key? key,
       required this.controller,
       this.formKey,

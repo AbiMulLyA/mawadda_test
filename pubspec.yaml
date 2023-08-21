@@ -39,7 +39,7 @@ dependencies:
   equatable: ^2.0.5
   shared_preferences: ^2.1.1
   injectable: ^2.1.2
-  flutter_screenutil: ^5.9.0-beta
+  flutter_screenutil: ^5.9.0
   google_fonts: ^5.1.0
   flutter_svg: ^2.0.7
   get: ^4.6.5

@@ -33,7 +33,7 @@ class SharedPreferencesUtil {
   List<String>? getStringList(String key) =>
       _sharedPreferences.getStringList(key);
 
-  bool isKeyExists(String key) => _sharedPreferences.containsKey(key);
+  bool isKeyExistis(String key) => _sharedPreferences.containsKey(key);
 
   Future<bool> clearKey(String key) => _sharedPreferences.remove(key);
 

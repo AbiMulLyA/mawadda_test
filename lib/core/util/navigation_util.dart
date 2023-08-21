@@ -23,9 +23,7 @@ class NavigationUtil {
   Future<bool> isOnHomeRoute() async {
     final String? where = _sharedPreferencesUtil.getString(prefNavigationKey);
 
-    return where != null &&
-        where != '' &&
-        where == prefOnHomeRoute; //true atau false
+    return where != null && where != '' && where == prefOnHomeRoute;
   }
 
   Future<bool> isOnAuthRoute() async {

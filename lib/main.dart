@@ -45,13 +45,12 @@ class _AppState extends State<App> {
         splitScreenMode: true,
         ensureScreenSize: true,
         child: MaterialApp.router(
-          theme: ThemeData(
-            useMaterial3: true,
-            textTheme: GoogleFonts.averiaGruesaLibreTextTheme(),
-          ),
-          routerDelegate: _appRouter.delegate(),
-          routeInformationParser: _appRouter.defaultRouteParser(),
-        ),
+            theme: ThemeData(
+              useMaterial3: true,
+              textTheme: GoogleFonts.averiaGruesaLibreTextTheme(),
+            ),
+            routerDelegate: _appRouter.delegate(),
+            routeInformationParser: _appRouter.defaultRouteParser()),
       ),
     );
   }

@@ -2,7 +2,47 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-String? validateEmailNameForm({
+String? validateNameForm({
+  required BuildContext context,
+  required bool isName,
+  RxBool? isNameTrue,
+  String? value,
+}) {
+  if (StringUtils.isNullOrEmpty(value)) {
+    if (isName) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        isNameTrue!.value = false;
+      });
+      return 'Email is required!';
+    } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        isNameTrue!.value = false;
+      });
+      return 'Name is required!';
+    }
+  } else {
+    if (isName) {
+      if (!EmailUtils.isEmail(value!)) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          isNameTrue!.value = false;
+        });
+        return 'Email is invalid!';
+      } else {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          isNameTrue!.value = true;
+        });
+      }
+    } else {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        isNameTrue!.value = true;
+      });
+      return null;
+    }
+  }
+  return null;
+}
+
+String? validateEmailForm({
   required BuildContext context,
   required bool isEmail,
   RxBool? isNameTrue,
