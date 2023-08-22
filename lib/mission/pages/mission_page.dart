@@ -38,7 +38,7 @@ class _MissionPageState extends State<MissionPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(height: 10.h),
-                  Text("How far are you?"),
+                  const Text("How far are you?"),
                   SizedBox(height: 10.h),
                   Container(
                     alignment: Alignment.center,
@@ -52,7 +52,7 @@ class _MissionPageState extends State<MissionPage> {
                         bottomLeft: Radius.circular(20),
                       ),
                     ),
-                    child: Text("You have completed 0/10 mission(s)"),
+                    child: const Text("You have completed 0/10 mission(s)"),
                   )
                 ],
               )),

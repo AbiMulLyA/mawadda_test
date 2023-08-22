@@ -34,122 +34,57 @@ class _EditProfilePageState extends State<EditProfilePage> {
     final RxBool isCountryTrue = false.obs;
     final RxBool isPhoneTrue = false.obs;
 
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Mawadda',
-          style: GoogleFonts.dawningOfANewDay(
-              color: Colors.black,
-              fontSize: 24.sp,
-              fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: const Color(0xffD1B1BE),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {
-                context.router.replace(const AuthRoute());
-              },
-              icon: const Icon(Icons.logout, color: Colors.black))
-        ],
+    return Container(
+      alignment: Alignment.center,
+      padding: EdgeInsets.only(
+        top: 100.r,
+        right: 12.r,
+        left: 12.r,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black,
-        unselectedLabelStyle: GoogleFonts.averiaGruesaLibre(),
-        selectedLabelStyle: GoogleFonts.averiaGruesaLibre(),
-        backgroundColor: const Color(0xffDFDCEF),
-        selectedFontSize: 15.sp,
-        unselectedFontSize: 15.sp,
-        onTap: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        currentIndex: currentPageIndex,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              color: Colors.black,
-            ),
-            activeIcon: Icon(
-              Icons.home,
-              color: Colors.white,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.flag_outlined,
-              color: Colors.black,
-            ),
-            activeIcon: Icon(
-              Icons.flag,
-              color: Colors.white,
-            ),
-            label: 'Missions',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outlined,
-              color: Colors.black,
-            ),
-            activeIcon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-            label: 'Profile',
-          ),
-        ],
+      constraints: const BoxConstraints.expand(),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("assets/image_back.png"), fit: BoxFit.cover),
       ),
-      extendBodyBehindAppBar: true,
-      body: <Widget>[
-        Container(
-          alignment: Alignment.center,
-          constraints: const BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/image_back.png"), fit: BoxFit.cover),
+      child: Column(
+        children: [
+          const Icon(
+            Icons.person_rounded,
+            color: Colors.black,
+            size: 50,
           ),
-          child: Column(children: [
-            Icon(
-              Icons.person_rounded,
-              color: Colors.black,
-              size: 50,
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            ProfileFormComponent(
-                formKey: 'name',
-                controller: nameCtr,
-                hintText: 'Your name',
-                textInputType: TextInputType.emailAddress,
-                validator: (value) => validateNameForm(
-                      context: context,
-                      isName: true,
-                      value: value,
-                      isNameTrue: isNameTrue,
-                    )),
-            SizedBox(
-              height: 10.h,
-            ),
-            ProfileFormComponent(
-                formKey: 'email',
-                controller: emailCtr,
-                hintText: 'Your Email',
-                textInputType: TextInputType.emailAddress,
-                validator: (value) => validateEmailForm(
-                      context: context,
-                      isEmail: true,
-                      value: value,
-                      isEmailTrue: isEmailTrue,
-                    )),
-            SizedBox(
-              height: 10.h,
-            ),
-            ProfileFormComponent(
+          SizedBox(
+            height: 10.h,
+          ),
+          ProfileFormComponent(
+              formKey: 'name',
+              controller: nameCtr,
+              hintText: 'Your name',
+              textInputType: TextInputType.emailAddress,
+              validator: (value) => validateNameForm(
+                    context: context,
+                    isName: true,
+                    value: value,
+                    isNameTrue: isNameTrue,
+                  )),
+          SizedBox(
+            height: 10.h,
+          ),
+          ProfileFormComponent(
+              formKey: 'email',
+              controller: emailCtr,
+              hintText: 'Your Email',
+              textInputType: TextInputType.emailAddress,
+              validator: (value) => validateEmailForm(
+                    context: context,
+                    isEmail: true,
+                    value: value,
+                    isEmailTrue: isEmailTrue,
+                  )),
+          SizedBox(
+            height: 10.h,
+          ),
+          /*ProfileFormComponent(
                 formKey: 'birthdate',
                 controller: birthCtr,
                 hintText: 'Birth Date (DD/MM/YY)',
@@ -172,43 +107,42 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 controller: phoneCtr,
                 hintText: 'Your Phone Number (e.g. 60123123123)',
                 textInputType: TextInputType.number,
-                validator: (value) => ()),
-            SizedBox(
-              height: 10.h,
-            ),
-            SizedBox(
-              height: 38.h,
-              width: 0.8.sw,
-              child: Obx(
-                () => ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: isNameTrue.value == true ||
-                              isEmailTrue.value == true ||
-                              isBirthTrue.value == true ||
-                              isCountryTrue.value == true ||
-                              isPhoneTrue.value == true
-                          ? Color(0xffFAC6EA)
-                          : Colors.grey,
-                      side: BorderSide(width: 3.0, color: Colors.black)),
-                  onPressed: () {
-                    if (isNameTrue.value == true ||
-                        isEmailTrue.value == true ||
-                        isBirthTrue.value == true ||
-                        isCountryTrue.value == true ||
-                        isPhoneTrue.value == true) {
-                      context.router.replace(HomeRoute());
-                    }
-                  },
-                  child: const Text(
-                    'Save Profile',
-                    style: TextStyle(color: Colors.black),
-                  ),
+                validator: (value) => ()),*/
+          SizedBox(
+            height: 10.h,
+          ),
+          SizedBox(
+            height: 38.h,
+            width: 0.8.sw,
+            child: Obx(
+              () => ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: isNameTrue.value == true ||
+                            isEmailTrue.value == true ||
+                            isBirthTrue.value == true ||
+                            isCountryTrue.value == true ||
+                            isPhoneTrue.value == true
+                        ? const Color(0xffFAC6EA)
+                        : Colors.grey,
+                    side: const BorderSide(width: 3.0, color: Colors.black)),
+                onPressed: () {
+                  if (isNameTrue.value == true ||
+                      isEmailTrue.value == true ||
+                      isBirthTrue.value == true ||
+                      isCountryTrue.value == true ||
+                      isPhoneTrue.value == true) {
+                    context.router.replace(const HomeRoute());
+                  }
+                },
+                child: const Text(
+                  'Save Profile',
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
             ),
-          ]),
-        )
-      ][currentPageIndex],
+          ),
+        ],
+      ),
     );
   }
 }
