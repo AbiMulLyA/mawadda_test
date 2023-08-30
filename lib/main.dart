@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mawadda_app/firebase_options.dart';
 
+import 'auth/bloc/login/login_bloc.dart';
 import 'core/di/injector.dart';
 import 'core/navigation/bloc/navigation_bloc.dart';
 import 'core/router/router.dart';
@@ -44,6 +45,9 @@ class _AppState extends State<App> {
       providers: [
         BlocProvider(
           create: (_) => getIt<NavigationBloc>()..add(const AppStartedEv()),
+        ),
+        BlocProvider(
+          create: (_) => getIt<LoginBloc>(),
         ),
       ],
       child: ScreenUtilInit(

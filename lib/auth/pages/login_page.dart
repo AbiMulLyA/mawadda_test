@@ -2,9 +2,11 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mawadda_app/auth/bloc/login/login_bloc.dart';
 
 import 'package:mawadda_app/auth/components/auth_form_component.dart';
 import 'package:mawadda_app/auth/components/password_form_component.dart';
@@ -57,10 +59,10 @@ class LoginPage extends StatelessWidget {
                   Container(
                     height: 93.h,
                     width: 290.w,
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     decoration: BoxDecoration(
                         border: Border.all(width: 3, color: Colors.black),
-                        color: Color(0xffDFDCEF),
+                        color: const Color(0xffDFDCEF),
                         borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(20),
                             topLeft: Radius.circular(20))),
@@ -136,14 +138,20 @@ class LoginPage extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: isEmailTrue.value == true &&
                                           isPasswordTrue == true
-                                      ? Color(0xffFAC6EA)
+                                      ? const Color(0xffFAC6EA)
                                       : Colors.grey,
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                       width: 3.0, color: Colors.black)),
                               onPressed: () {
                                 if (isEmailTrue.value == true &&
                                     isPasswordTrue == true) {
-                                  context.router.replace(HomeRoute());
+                                  context.router.replace(const HomeRoute());
+                                  // context.read<LoginBloc>().add(
+                                  //       LoginFetchEv(
+                                  //         password: passwordCtr.text,
+                                  //         email: emailCtr.text,
+                                  //       ),
+                                  //     );
                                 }
                               },
                               child: const Text(
@@ -171,7 +179,8 @@ class LoginPage extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => RegisterPage()));
+                                        builder: (context) =>
+                                            const RegisterPage()));
                               },
                               child: Text(
                                 'Sign Up',
