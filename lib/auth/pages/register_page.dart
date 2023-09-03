@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mawadda_app/auth/components/auth_form_component.dart';
-import 'package:mawadda_app/auth/components/password_form_component.dart';
 import 'package:mawadda_app/auth/pages/login_page.dart';
 import 'package:mawadda_app/auth/pages/succeed_signup.dart';
 import 'package:mawadda_app/auth/utils/auth_string_util.dart';
+
+import '../../core/components/form_component.dart';
+import '../../core/components/password_form_component.dart';
 
 @RoutePage()
 class RegisterPage extends StatelessWidget {
@@ -33,7 +34,7 @@ class RegisterPage extends StatelessWidget {
         image: DecorationImage(
             image: AssetImage("assets/image_back.png"), fit: BoxFit.cover),
       ),
-      padding: EdgeInsets.all(10.r),
+      padding: EdgeInsets.only(top: 10.r, left: 10.r, right: 10.r),
       child: Center(
         child: ListView(
           children: [
@@ -97,7 +98,7 @@ class RegisterPage extends StatelessWidget {
                           SizedBox(
                             height: 10.h,
                           ),
-                          AuthFormComponent(
+                          FormComponent(
                             formKey: 'name',
                             controller: nameCtr,
                             hintText: 'Your Name',
@@ -111,7 +112,7 @@ class RegisterPage extends StatelessWidget {
                           SizedBox(
                             height: 10.h,
                           ),
-                          AuthFormComponent(
+                          FormComponent(
                             formKey: 'email',
                             controller: emailCtr,
                             hintText: 'Your Email',

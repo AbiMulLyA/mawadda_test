@@ -70,7 +70,7 @@ class AuthPage extends StatelessWidget {
                       width: 290.w,
                       decoration: BoxDecoration(
                           border: Border.all(width: 3, color: Colors.black),
-                          color: Color(0xffDFDCEF),
+                          color: const Color(0xffDFDCEF),
                           borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(20),
                               bottomRight: Radius.circular(20))),
@@ -82,8 +82,8 @@ class AuthPage extends StatelessWidget {
                               width: 169.w,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xffFAC6EA),
-                                    side: BorderSide(
+                                    backgroundColor: const Color(0xffFAC6EA),
+                                    side: const BorderSide(
                                         width: 3.0, color: Colors.black)),
                                 onPressed: () {
                                   Navigator.push(
@@ -105,8 +105,8 @@ class AuthPage extends StatelessWidget {
                               width: 169.w,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color(0xffB4B0CE),
-                                    side: BorderSide(
+                                    backgroundColor: const Color(0xffB4B0CE),
+                                    side: const BorderSide(
                                         width: 3.0, color: Colors.black)),
                                 onPressed: () {
                                   Navigator.push(

@@ -2,21 +2,17 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mawadda_app/auth/bloc/login/login_bloc.dart';
 
-import 'package:mawadda_app/auth/components/auth_form_component.dart';
-import 'package:mawadda_app/auth/components/password_form_component.dart';
 import 'package:mawadda_app/auth/pages/register_page.dart';
-//import 'package:mawadda_app/auth/pages/succeed_signup.dart';
-import 'package:mawadda_app/home/pages/home_page.dart';
+
 import 'package:mawadda_app/auth/utils/auth_string_util.dart';
 
+import '../../core/components/form_component.dart';
+import '../../core/components/password_form_component.dart';
 import '../../core/router/router.dart';
-import '../../main.dart';
 
 @RoutePage()
 class LoginPage extends StatelessWidget {
@@ -37,7 +33,7 @@ class LoginPage extends StatelessWidget {
         image: DecorationImage(
             image: AssetImage("assets/image_back.png"), fit: BoxFit.cover),
       ),
-      padding: EdgeInsets.all(10.r),
+      padding: EdgeInsets.only(top: 10.r, left: 10.r, right: 10.r),
       child: Center(
           child: ListView(
         children: [
@@ -101,7 +97,7 @@ class LoginPage extends StatelessWidget {
                         SizedBox(
                           height: 10.h,
                         ),
-                        AuthFormComponent(
+                        FormComponent(
                           formKey: 'email',
                           controller: emailCtr,
                           hintText: 'Your Email',
@@ -146,12 +142,6 @@ class LoginPage extends StatelessWidget {
                                 if (isEmailTrue.value == true &&
                                     isPasswordTrue == true) {
                                   context.router.replace(const HomeRoute());
-                                  // context.read<LoginBloc>().add(
-                                  //       LoginFetchEv(
-                                  //         password: passwordCtr.text,
-                                  //         email: emailCtr.text,
-                                  //       ),
-                                  //     );
                                 }
                               },
                               child: const Text(

@@ -55,51 +55,33 @@ class _NavigationMainState extends State<NavigationMain> {
               icon: const Icon(Icons.logout, color: Colors.black))
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black,
-        unselectedLabelStyle: GoogleFonts.averiaGruesaLibre(),
-        selectedLabelStyle: GoogleFonts.averiaGruesaLibre(),
-        backgroundColor: const Color(0xffDFDCEF),
-        selectedFontSize: 15.sp,
-        unselectedFontSize: 15.sp,
-        onTap: (int index) {
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
           });
         },
-        currentIndex: currentPageIndex,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
+        indicatorColor: const Color(0xffB4B0CE),
+        selectedIndex: currentPageIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
             icon: Icon(
               Icons.home_outlined,
               color: Colors.black,
             ),
-            activeIcon: Icon(
-              Icons.home,
-              color: Colors.white,
-            ),
             label: 'Home',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(
               Icons.flag_outlined,
               color: Colors.black,
             ),
-            activeIcon: Icon(
-              Icons.flag,
-              color: Colors.white,
-            ),
             label: 'Missions',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(
               Icons.person_outlined,
               color: Colors.black,
-            ),
-            activeIcon: Icon(
-              Icons.person,
-              color: Colors.white,
             ),
             label: 'Profile',
           ),

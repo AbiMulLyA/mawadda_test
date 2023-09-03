@@ -11,6 +11,7 @@ import 'auth/bloc/login/login_bloc.dart';
 import 'core/di/injector.dart';
 import 'core/navigation/bloc/navigation_bloc.dart';
 import 'core/router/router.dart';
+import 'profile/bloc/navigation/profile_navigation_cubit.dart';
 
 void main() {
   mainApp();
@@ -49,6 +50,9 @@ class _AppState extends State<App> {
         BlocProvider(
           create: (_) => getIt<LoginBloc>(),
         ),
+        BlocProvider(
+          create: (_) => getIt<ProfileNavigationCubit>(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 720),
@@ -77,7 +81,7 @@ class MainPage extends StatelessWidget {
         debugPrint('Navigation State : $state');
 
         if (state == const AuthSt()) {
-          context.router.replace(const AuthRoute());
+          context.router.replace(const HomeRoute());
         }
 
         if (state == const HomeSt()) {

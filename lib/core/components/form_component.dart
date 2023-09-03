@@ -2,21 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 //import 'package:get/get.dart';
 
-class AuthFormComponent extends StatelessWidget {
+class FormComponent extends StatelessWidget {
   final TextEditingController controller;
   final String? formKey;
   final String hintText;
   final TextInputType textInputType;
+  final bool isReadOnly;
   final Function(String? value) validator;
+  final Function()? onTap;
 
-  const AuthFormComponent(
-      {Key? key,
-      required this.controller,
-      this.formKey,
-      required this.hintText,
-      required this.textInputType,
-      required this.validator})
-      : super(key: key);
+  const FormComponent({
+    Key? key,
+    required this.controller,
+    this.formKey,
+    required this.hintText,
+    required this.textInputType,
+    required this.validator,
+    this.isReadOnly = false,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +31,8 @@ class AuthFormComponent extends StatelessWidget {
       keyboardType: textInputType,
       autofocus: false,
       autovalidateMode: AutovalidateMode.onUserInteraction,
+      readOnly: isReadOnly,
+      onTap: onTap,
       decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
