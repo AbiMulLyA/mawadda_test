@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, unused_import
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mawadda_app/core/navigation/bloc/navigation_bloc.dart';
 import 'package:mawadda_app/profile/pages/edit_profile_page.dart';
 
 import '../../auth/pages/auth_page.dart';
@@ -50,7 +52,8 @@ class _NavigationMainState extends State<NavigationMain> {
         actions: <Widget>[
           IconButton(
               onPressed: () {
-                context.router.replace(const AuthRoute());
+                // context.router.replace(const AuthRoute());
+                context.read<NavigationBloc>().add(const AuthEv());
               },
               icon: const Icon(Icons.logout, color: Colors.black))
         ],

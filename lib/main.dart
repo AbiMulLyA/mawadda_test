@@ -5,7 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mawadda_app/auth/pages/login_page.dart';
 import 'package:mawadda_app/firebase_options.dart';
+import 'package:mawadda_app/home/pages/home_page.dart';
 
 import 'auth/bloc/login/login_bloc.dart';
 import 'core/di/injector.dart';
@@ -81,11 +83,13 @@ class MainPage extends StatelessWidget {
         debugPrint('Navigation State : $state');
 
         if (state == const AuthSt()) {
-          context.router.replace(const HomeRoute());
+          // context.router.replace(const LoginRoute());
+          return const LoginPage();
         }
 
         if (state == const HomeSt()) {
-          // context.router.replace(const LoginRoute());
+          // context.router.replace(const HomeRoute());
+          return const HomePage();
         }
         return Container(
           color: Colors.white,
